@@ -48,6 +48,6 @@ If you discover any security related issues, please email dummy-email@dummy.com 
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## PHP Package Boilerplate
+## Composer Package Builder
 
-This package was generated using the [PHP Package Boilerplate](https://laravelpackageboilerplate.com).
+This package was generated using the [Composer Package Builder](https://github.com/huangdijia/composer-package-builder).
