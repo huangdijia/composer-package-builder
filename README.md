@@ -1,4 +1,4 @@
-# Very short description of the package
+# Composer Package Builder
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/huangdijia/composer-package-builder.svg?style=flat-square)](https://packagist.org/packages/huangdijia/composer-package-builder)
 [![Build Status](https://img.shields.io/travis/huangdijia/composer-package-builder/master.svg?style=flat-square)](https://travis-ci.org/huangdijia/composer-package-builder)
