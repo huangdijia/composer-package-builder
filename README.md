@@ -17,8 +17,10 @@ composer g require huangdijia/composer-package-builder
 
 ## Usage
 
-``` php
-// Usage description here
+``` bash
+composer build:laravel-package
+composer build:php-package
+composer build:thinkphp-package
 ```
 
 ### Testing
