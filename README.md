@@ -43,7 +43,7 @@ If you discover any security related issues, please email dummy-email instead of
 
 ## Credits
 
-- [dummy-author](https://github.com/huangdijia)
+- [Huangdijia](https://github.com/huangdijia)
 - [All Contributors](../../contributors)
 
 ## License
