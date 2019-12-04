@@ -1,0 +1,40 @@
+{
+    "name": "dummy-vendor/dummy-package",
+    "description": "My awesome package",
+    "keywords": [
+        "dummy-vendor",
+        "dummy-package"
+    ],
+    "homepage": "https://github.com/dummy-vendor/dummy-package",
+    "license": "MIT",
+    "type": "library",
+    "authors": [{
+        "name": "dummy-author",
+        "email": "dummy-email",
+        "role": "Developer"
+    }],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DummyVendor\\DummyPackage\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DummyVendor\\DummyPackage\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

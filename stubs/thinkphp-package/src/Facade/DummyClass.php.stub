@@ -1,0 +1,19 @@
+<?php
+
+namespace DummyVendor\DummyPackage\Facade;
+
+/**
+ * @see \DummyVendor\DummyPackage\DummyClass
+ */
+class DummyClass extends \think\Facade
+{
+    /**
+     * Get the registered name of the component.
+     *
+     * @return string
+     */
+    protected static function getFacadeClass()
+    {
+        return 'dummy-abstract';
+    }
+}

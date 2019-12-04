@@ -1,0 +1,29 @@
+{
+    "name": "huangdijia/composer-package-builder",
+    "type": "composer-plugin",
+    "description": "Get started with your Laravel/thinkphp/php package in no time with this package generator.",
+    "require": {
+        "php": "^7.0|^8.0",
+        "composer-plugin-api": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0|^8.0",
+        "composer/composer": "^1.7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Huangdijia\\ComposerPackageBuilder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Huangdijia\\ComposerPackageBuilder\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "class": "Huangdijia\\ComposerPackageBuilder\\Plugin"
+    },
+    "scripts": {
+        "test": ["phpunit"]
+    }
+}

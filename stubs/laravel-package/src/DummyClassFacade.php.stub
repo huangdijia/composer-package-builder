@@ -1,0 +1,21 @@
+<?php
+
+namespace DummyVendor\DummyPackage;
+
+use Illuminate\Support\Facades\Facade;
+
+/**
+ * @see \DummyVendor\DummyPackage\DummyClass
+ */
+class DummyClassFacade extends Facade
+{
+    /**
+     * Get the registered name of the component.
+     *
+     * @return string
+     */
+    protected static function getFacadeAccessor()
+    {
+        return 'dummy-abstract';
+    }
+}
