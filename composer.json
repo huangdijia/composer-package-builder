@@ -2,6 +2,12 @@
     "name": "huangdijia/composer-package-builder",
     "type": "composer-plugin",
     "description": "Get started with your Laravel/thinkphp/php package in no time with this package generator.",
+    "authors": [{
+        "name": "huangdijia",
+        "email": "huangdijia@gmail.com",
+        "homepage": "http://github.com/huangdijia"
+    }],
+    "license": "MIT",
     "require": {
         "php": "^7.0",
         "composer-plugin-api": "^1.0"
