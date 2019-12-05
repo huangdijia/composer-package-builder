@@ -1,0 +1,27 @@
+<?php
+
+namespace DummyVendor\ComposerPackageBuilder\Commands;
+
+use Composer\Command\BaseCommand;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
+
+class BuildCommand extends BaseCommand
+{
+    protected function configure()
+    {
+        $this->setName('dummy');
+        // $this->setDescription('dummy-description')
+        //     ->setDefinition([
+        //         new InputOption('option-1', null, InputOption::VALUE_NONE, 'Option-1'),
+        //     ]);
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $style = new SymfonyStyle($input, $output);
+        $style->success("Executing [DummyClass]");
+    }
+}

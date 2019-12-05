@@ -1,27 +1,25 @@
 {
     "name": "dummy-vendor/dummy-package",
-    "description": "dummy-description",
+    "description": "My awesome package",
     "keywords": [
         "dummy-vendor",
         "dummy-package"
     ],
     "homepage": "https://github.com/dummy-vendor/dummy-package",
     "license": "MIT",
-    "type": "library",
-    "authors": [
-        {
-            "name": "dummy-author",
-            "email": "dummy-email",
-            "role": "Developer"
-        }
-    ],
+    "type": "composer-plugin",
+    "authors": [{
+        "name": "dummy-author",
+        "email": "dummy-email",
+        "role": "Developer"
+    }],
     "require": {
         "php": "^7.0",
-        "illuminate/support": "^5.8|^6.0|^7.0"
+        "composer-plugin-api": "^1.0"
     },
     "require-dev": {
-        "orchestra/testbench": "3.8.*",
-        "phpunit/phpunit": "^7.0|^8.0"
+        "phpunit/phpunit": "^7.0|^8.0",
+        "composer/composer": "^1.7.2"
     },
     "autoload": {
         "psr-4": {
@@ -33,6 +31,9 @@
             "DummyVendor\\DummyPackage\\Tests\\": "tests"
         }
     },
+    "extra": {
+        "class": "DummyVendor\\DummyPackage\\Plugin"
+    },
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
@@ -40,15 +41,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-        "think": {
-            "services": [
-                "DummyVendor\\DummyPackage\\Service"
-            ],
-            "config": {
-                "dummy-config": "src/config.php"
-            }
-        }
     }
 }

@@ -9,12 +9,21 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class BuildPhpPackageCommand extends BaseCommand
+class BuildCommand extends BaseCommand
 {
+    private $subName;
+
+    public function __construct(string $name = null)
+    {
+        $this->subName = explode(':', $name, 2)[1] ?? 'laravel-package';
+
+        parent::__construct($name);
+    }
+
     protected function configure()
     {
-        $this->setName('build:php-package');
-        $this->setDescription('Build a php package.')
+        // $this->setName('build:thinkphp-package');
+        $this->setDescription('Build a ' . $this->subName . '.')
             ->setDefinition([
                 new InputOption('vendor', null, InputOption::VALUE_OPTIONAL, 'Vendor Name', 'my-vendor'),
                 new InputOption('package', null, InputOption::VALUE_OPTIONAL, 'Package Name', 'my-package'),
@@ -51,7 +60,28 @@ class BuildPhpPackageCommand extends BaseCommand
         $vendorName  = $options['vendor'];
         $packageName = $options['package'];
         $outputPath  = $options['package'];
-        $stubPath    = realpath(__DIR__ . '/../../stubs/php-package');
+
+        switch ($this->subName) {
+            case 'thinkphp-package':
+                $stubPath = realpath(__DIR__ . '/../../stubs/thinkphp-package');
+                break;
+
+            case 'laravel-package':
+                $stubPath = realpath(__DIR__ . '/../../stubs/laravel-package');
+                break;
+
+            case 'php-package':
+                $stubPath = realpath(__DIR__ . '/../../stubs/php-package');
+                break;
+
+            case 'composer-plugin':
+                $stubPath = realpath(__DIR__ . '/../../stubs/composer-plugin');
+                break;
+
+            default:
+                throw new \InvalidArgumentException('subname is error.');
+                break;
+        }
 
         // Check output is exists or not
         if (is_dir($outputPath)) {
@@ -60,9 +90,10 @@ class BuildPhpPackageCommand extends BaseCommand
 
         $stubs = array_merge(
             [$outputPath],
-            glob($stubPath . '/*', GLOB_BRACE) ?: []
+            glob($stubPath . '/*') ?: []
             , glob($stubPath . '/.*') ?: []
             , glob($stubPath . '/*/*') ?: []
+            , glob($stubPath . '/*/*/*') ?: []
         );
 
         // Make dirs
@@ -139,7 +170,7 @@ class BuildPhpPackageCommand extends BaseCommand
         $options['email']       = $input->getOption('email') ?? 'author@domain.com';
         $options['description'] = $input->getOption('description') ?? 'My awesome package';
         $options['license']     = $input->getOption('license') ?? 'MIT';
-        $options['output']     = $input->getOption('output') ?? $_SERVER['PWD'];
+        $options['output']      = $input->getOption('output') ?? $_SERVER['PWD'];
 
         return $options;
     }

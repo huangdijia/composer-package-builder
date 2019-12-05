@@ -3,7 +3,7 @@
     "type": "composer-plugin",
     "description": "Get started with your Laravel/thinkphp/php package in no time with this package generator.",
     "require": {
-        "php": "^7.0|^8.0",
+        "php": "^7.0",
         "composer-plugin-api": "^1.0"
     },
     "require-dev": {
