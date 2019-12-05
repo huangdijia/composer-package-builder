@@ -6,7 +6,7 @@
         "dummy-package"
     ],
     "homepage": "https://github.com/dummy-vendor/dummy-package",
-    "license": "MIT",
+    "license": "dummy-license",
     "type": "library",
     "authors": [
         {

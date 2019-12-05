@@ -136,6 +136,7 @@ class BuildCommand extends BaseCommand
             'dummy-author'      => $options['author'],
             'dummy-email'       => $options['email'],
             'dummy-description' => $options['description'],
+            'dummy-license'     => $options['license'],
         ];
 
         // Replace stubs
