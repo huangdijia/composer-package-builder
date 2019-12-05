@@ -47,7 +47,7 @@
                 "DummyVendor\\DummyPackage\\DummyClassServiceProvider"
             ],
             "aliases": {
-                "LaravelPackageBuilder": "DummyVendor\\DummyPackage\\DummyClassFacade"
+                "DummyClass": "DummyVendor\\DummyPackage\\DummyClassFacade"
             }
         }
     }
