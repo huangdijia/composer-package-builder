@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/huangdijia/composer-package-builder.svg?style=flat-square)](https://packagist.org/packages/huangdijia/composer-package-builder)
 [![Total Downloads](https://img.shields.io/packagist/dt/huangdijia/composer-package-builder.svg?style=flat-square)](https://packagist.org/packages/huangdijia/composer-package-builder)
-[![GitHub license](https://img.shields.io/github/license/huangdijia/laravel-youdu)](https://github.com/huangdijia/laravel-youdu)
+[![GitHub license](https://img.shields.io/github/license/huangdijia/composer-package-builder)](https://github.com/huangdijia/composer-package-builder)
 
 ## Installation
 
