@@ -2,57 +2,14 @@
 
 namespace DummyVendor\DummyPackage\Tests;
 
-use Orchestra\Testbench\TestCase;
-
 class ExampleTest extends TestCase
 {
-    protected function getPackageProviders($app)
-    {
-        return [
-            'DummyVendor\DummyPackage\DummyClassServiceProvider',
-        ];
-    }
-
-    protected function getPackageAliases($app)
-    {
-        return [
-            'DummyClass' => 'DummyVendor\DummyPackage\DummyClassFacade',
-        ];
-    }
-
     /**
-     * Setup the test environment.
-     */
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        // Your code here
-    }
-
-    /**
-     * Define environment setup.
-     *
-     * @param  \Illuminate\Foundation\Application  $app
-     * @return void
-     */
-    protected function getEnvironmentSetUp($app)
-    {
-        // Setup default database to use sqlite :memory:
-        // $app['config']->set('database.default', 'testbench');
-        // $app['config']->set('database.connections.testbench', [
-        //     'driver'   => 'sqlite',
-        //     'database' => ':memory:',
-        //     'prefix'   => '',
-        // ]);
-    }
-
-    /**
-     * Basic test
+     * testBasicExample
      *
      * @return void
      */
-    public function testBasic()
+    public function testBasicExample()
     {
         $this->assertInstanceOf(\DummyVendor\DummyPackage\DummyClass::class, app('package-manager'));
         $this->assertInstanceOf(\DummyVendor\DummyPackage\DummyClass::class, \DummyVendor\DummyPackage\DummyClassFacade::getFacadeRoot());
