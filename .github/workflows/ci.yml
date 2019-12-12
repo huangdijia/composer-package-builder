@@ -40,6 +40,10 @@ jobs:
       # - name: Check PHP Extensions
       #   run: php -m
 
+      - name: Test self
+        run: |
+          composer test
+
       - name: Install to composer
         run: |
           composer g config repositories.composer-package-builder path $(pwd)
