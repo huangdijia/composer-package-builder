@@ -11,7 +11,7 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
-        $this->assertInstanceOf(\DummyVendor\DummyPackage\DummyClass::class, app('package-manager'));
+        $this->assertInstanceOf(\DummyVendor\DummyPackage\DummyClass::class, app('dummy-abstract'));
         $this->assertInstanceOf(\DummyVendor\DummyPackage\DummyClass::class, \DummyVendor\DummyPackage\DummyClassFacade::getFacadeRoot());
     }
 }
