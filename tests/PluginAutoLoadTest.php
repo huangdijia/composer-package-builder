@@ -2,17 +2,14 @@
 
 namespace Huangdijia\LaravelPackageBuilder\Tests;
 
-use Huangdijia\LaravelPackageBuilder\Composer\CommandProvider;
-use Huangdijia\LaravelPackageBuilder\Composer\Commands\BuildCommand;
-use Huangdijia\LaravelPackageBuilder\Composer\Plugin;
 use PHPUnit\Framework\TestCase;
 
 class PluginAutoloadTest extends TestCase
 {
-    public function testAutoload(): void
+    public function testAutoload()
     {
-        $this->assertTrue(class_exists(Plugin::class));
-        $this->assertTrue(class_exists(CommandProvider::class));
-        $this->assertTrue(class_exists(BuildCommand::class));
+        $this->assertTrue(class_exists('Huangdijia\ComposerPackageBuilder\Plugin'));
+        $this->assertTrue(class_exists('Huangdijia\ComposerPackageBuilder\CommandProvider'));
+        $this->assertTrue(class_exists('Huangdijia\ComposerPackageBuilder\Commands\BuildCommand'));
     }
 }
