@@ -32,39 +32,43 @@ jobs:
       - name: Check Composer Version
         run: composer -V
 
-      - name: Where am I
-        run: |
-          echo $(pwd)
-          echo $HOME
+      # - name: Where am I
+      #   run: |
+      #     echo $(pwd)
+      #     echo $HOME
 
       # - name: Check PHP Extensions
       #   run: php -m
 
-      # - name: Install to composer
-      #   run: |
-      #     composer g repositories.composer-package-builder path .
-      #     composer g require "huangdijia/composer-package-builder:*@dev"
+      - name: Install to composer
+        run: |
+          composer g repositories.composer-package-builder path $(pwd)
+          composer g require "huangdijia/composer-package-builder:*@dev"
 
-      # - name: Test build composer-plugin
-      #   run: |
-      #     composer build:composer-plugin --vendor=hdj --package=composer-demo
-      #     cd composer-demo
-      #     composer test
+      - name: Test build composer-plugin
+        run: |
+          cd $HOME
+          composer build:composer-plugin --vendor=hdj --package=composer-demo
+          cd composer-demo
+          composer test
 
-      # - name: Test build laravel-package
-      #   run: |
-      #     composer build:laravel-package --vendor=hdj --package=laravel-demo
-      #     cd laravel-demo
-      #     composer test
+      - name: Test build laravel-package
+        run: |
+          cd $HOME
+          composer build:laravel-package --vendor=hdj --package=laravel-demo
+          cd laravel-demo
+          composer test
 
-      # - name: Test build php-package
-      #   run: |
-      #     composer build:php-package --vendor=hdj --package=php-demo
-      #     cd php-demo
-      #     composer test
+      - name: Test build php-package
+        run: |
+          cd $HOME
+          composer build:php-package --vendor=hdj --package=php-demo
+          cd php-demo
+          composer test
 
-      # - name: Test build thinkphp-package
-      #   run: |
-      #     composer build:thinkphp-package --vendor=hdj --package=thinkphp-demo
-      #     cd thinkphp-demo
-      #     composer test
+      - name: Test build thinkphp-package
+        run: |
+          cd $HOME
+          composer build:thinkphp-package --vendor=hdj --package=thinkphp-demo
+          cd thinkphp-demo
+          composer test
