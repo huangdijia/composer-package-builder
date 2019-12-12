@@ -1,0 +1,68 @@
+name: COMPOSER-PACKAGE-BUILDER TEST ACTIONS
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.operating-system }}
+
+    strategy:
+      max-parallel: 15
+      matrix:
+        operating-system: [ubuntu-latest]
+        php-versions: ["7.0", "7.1", "7.2", "7.3", "7.4"]
+    name: PHP ${{ matrix.php-versions }} Test on ${{ matrix.operating-system }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@master
+
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extension-csv: mbstring, xdebug
+          ini-values-csv: "post_max_size=256M, short_open_tag=On"
+          coverage: xdebug
+
+      - name: Check PHP Version
+        run: php -v
+
+      - name: Check Composer Version
+        run: composer -V
+
+      - name: Where am I
+        run: echo $(pwd)
+
+      # - name: Check PHP Extensions
+      #   run: php -m
+
+      # - name: Install to composer
+      #   run: |
+      #     composer g repositories.composer-package-builder path .
+      #     composer g require "huangdijia/composer-package-builder:*@dev"
+
+      # - name: Test build composer-plugin
+      #   run: |
+      #     composer build:composer-plugin --vendor=hdj --package=composer-demo
+      #     cd composer-demo
+      #     composer test
+
+      # - name: Test build laravel-package
+      #   run: |
+      #     composer build:laravel-package --vendor=hdj --package=laravel-demo
+      #     cd laravel-demo
+      #     composer test
+
+      # - name: Test build php-package
+      #   run: |
+      #     composer build:php-package --vendor=hdj --package=php-demo
+      #     cd php-demo
+      #     composer test
+
+      # - name: Test build thinkphp-package
+      #   run: |
+      #     composer build:thinkphp-package --vendor=hdj --package=thinkphp-demo
+      #     cd thinkphp-demo
+      #     composer test
