@@ -8,6 +8,10 @@
         "email": "huangdijia@gmail.com",
         "homepage": "http://github.com/huangdijia"
     }],
+    "support": {
+        "issues": "https://github.com/huangdijia/composer-package-builder/issues",
+        "source": "https://github.com/huangdijia/composer-package-builder"
+    },
     "license": "MIT",
     "require": {
         "php": "^7.0",
