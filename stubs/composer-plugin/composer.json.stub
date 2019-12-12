@@ -13,6 +13,10 @@
         "email": "dummy-email",
         "role": "Developer"
     }],
+    "support": {
+        "issues": "https://github.com/dummy-vendor/dummy-package/issues",
+        "source": "https://github.com/dummy-vendor/dummy-package"
+    },
     "require": {
         "php": "^7.0",
         "composer-plugin-api": "^1.0"
