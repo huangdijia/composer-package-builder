@@ -50,6 +50,7 @@ jobs:
           cd $HOME
           composer build:composer-plugin --vendor=hdj --package=composer-demo
           cd composer-demo
+          composer update
           composer test
 
       - name: Test build laravel-package
@@ -57,6 +58,7 @@ jobs:
           cd $HOME
           composer build:laravel-package --vendor=hdj --package=laravel-demo
           cd laravel-demo
+          composer update
           composer test
 
       - name: Test build php-package
@@ -64,6 +66,7 @@ jobs:
           cd $HOME
           composer build:php-package --vendor=hdj --package=php-demo
           cd php-demo
+          composer update
           composer test
 
       - name: Test build thinkphp-package
@@ -71,4 +74,5 @@ jobs:
           cd $HOME
           composer build:thinkphp-package --vendor=hdj --package=thinkphp-demo
           cd thinkphp-demo
+          composer update
           composer test
