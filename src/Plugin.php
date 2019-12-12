@@ -16,11 +16,11 @@ class Plugin implements PluginInterface, Capable
      * @param Composer $composer
      * @param IOInterface $io
      */
-    public function activate(Composer $composer, IOInterface $io): void
+    public function activate(Composer $composer, IOInterface $io) //: void
     {
     }
 
-    public function getCapabilities(): array
+    public function getCapabilities() //: array
     {
         return array(
             CmdProvider::class => CommandProvider::class,
