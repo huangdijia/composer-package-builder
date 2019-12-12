@@ -33,7 +33,9 @@ jobs:
         run: composer -V
 
       - name: Where am I
-        run: echo $(pwd)
+        run: |
+          echo $(pwd)
+          echo $HOME
 
       # - name: Check PHP Extensions
       #   run: php -m
