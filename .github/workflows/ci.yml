@@ -42,6 +42,7 @@ jobs:
 
       - name: Test self
         run: |
+          composer update
           composer test
 
       - name: Install to composer
