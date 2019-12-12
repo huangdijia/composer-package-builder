@@ -42,7 +42,7 @@ jobs:
 
       - name: Install to composer
         run: |
-          composer g repositories.composer-package-builder path $(pwd)
+          composer g config repositories.composer-package-builder path $(pwd)
           composer g require "huangdijia/composer-package-builder:*@dev"
 
       - name: Test build composer-plugin
